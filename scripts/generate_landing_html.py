@@ -632,3 +632,4 @@ with open(r'C:\cash\landing.html', 'w', encoding='utf-8') as f:
     f.write(html_content)
 
 print("Gerado C:\\cash\\landing.html com sucesso!")
+

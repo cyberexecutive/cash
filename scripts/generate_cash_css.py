@@ -40,3 +40,4 @@ with open(r'C:\cash\css\styles.css', 'w', encoding='utf-8', newline='') as f:
     f.write(css)
 
 print(f"Gerado C:\\cash\\css\\styles.css com {len(css)} caracteres no tema Verde Dólar!")
+

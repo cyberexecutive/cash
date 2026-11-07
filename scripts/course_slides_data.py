@@ -1173,3 +1173,4 @@ SLIDES_DATA = [
         "subtitle": "Emissão oficial personalizada com validação criptográfica, carga horária e selo de excelência executiva."
     }
 ]
+

@@ -17,3 +17,4 @@ for k in student_keys:
     clean = k.replace('-', '').replace('_', '').replace(' ', '')
     print(f"'{sha256(k)}', // raw {k}")
     print(f"'{sha256(clean)}', // clean {clean}")
+

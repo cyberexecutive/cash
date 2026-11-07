@@ -150,3 +150,4 @@ svg_dest = os.path.join(img_dir, "logo-cyber-executive.svg")
 with open(svg_dest, "w", encoding="utf-8") as f:
     f.write(svg_content)
 print(f"Salvo SVG vetorial: {svg_dest}")
+

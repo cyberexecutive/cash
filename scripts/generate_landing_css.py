@@ -81,3 +81,4 @@ with open(r'C:\cash\css\landing.css', 'w', encoding='utf-8') as f:
     f.write(css)
 
 print("Gerado C:\\cash\\css\\landing.css com sucesso!")
+

@@ -128,3 +128,4 @@ def get_svg_generic(badge_text="GESTÃO EMPRESARIAL", icon_type="shield"):
       <rect x="150" y="322" width="200" height="26" rx="13" fill="#04120a" stroke="{badge_color}" stroke-width="1.2" opacity="0.85" />
       <text x="250" y="339" fill="{badge_color}" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700" letter-spacing="1.2" text-anchor="middle">{badge_text}</text>
     </svg>'''
+

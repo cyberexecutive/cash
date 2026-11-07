@@ -79,3 +79,4 @@ Plataforma web de capacitação prática e executiva em **Gestão e Fluxo de Cai
 
 ---
 © 2026 Cyber Executive Academy • Gestão Financeira Empresarial. Todos os direitos reservados.
+
