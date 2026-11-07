@@ -11,3 +11,5 @@ $RECYCLE.BIN/
 # Python cache
 __pycache__/
 *.pyc
+
+scripts/accept_and_push.py
