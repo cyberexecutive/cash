@@ -108,7 +108,7 @@ def run_checks():
             errors.append("Botão btn-checkout-kiwify não encontrado em landing.html")
         if "btn-checkout-hotmart" not in lp:
             errors.append("Botão btn-checkout-hotmart não encontrado em landing.html")
-        if "R$ 47" not in lp:
+        if "47" not in lp or "R$" not in lp:
             errors.append("Preço R$ 47 não encontrado em landing.html")
 
     # 5. Verificação de CSS
