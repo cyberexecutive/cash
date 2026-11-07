@@ -1,0 +1,13 @@
+# Arquivos de sistema e temporários
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Logs e arquivos locais de debug
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
