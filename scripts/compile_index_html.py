@@ -477,7 +477,7 @@ def compile_all():
         <button class="header-pill-badge" id="btn-header-unlock" title="Status de Acesso do Treinamento">
           <span class="badge-dot" id="access-badge-dot"></span>
           <span id="access-badge-text">⚡ Demonstração Gratuita</span>
-          <span class="badge-action" id="badge-action-label">• 🔑 Já sou Aluno</span>
+          <span class="badge-action" id="badge-action-label">• 🔑 Já sou Aluno / Gestor</span>
         </button>
       </div>
 
@@ -752,7 +752,7 @@ def compile_all():
 
       <div class="paywall-footer-hint">
         <span>Já adquiriu o treinamento?</span>
-        <button type="button" class="paywall-unlock-link" id="btn-paywall-enter-key">Inserir Chave de Acesso do Aluno</button>
+        <button type="button" class="paywall-unlock-link" id="btn-paywall-enter-key">🔑 Inserir Chave de Acesso (Aluno ou Gestor)</button>
       </div>
     </div>
   </div>
@@ -766,7 +766,7 @@ def compile_all():
         <div class="unlock-icon-circle">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3 class="unlock-title">Ativar Acesso do Treinamento</h3>
+        <h3 class="unlock-title">Ativar Acesso do Treinamento (Aluno ou Gestor)</h3>
         <p class="unlock-desc">Insira abaixo sua <strong>Chave de Acesso do Aluno</strong> recebida no e-mail após a compra ou a <strong>Senha de Gestor</strong> para liberar todos os módulos e o certificado.</p>
       </div>
 
