@@ -384,11 +384,11 @@ def generate_slide_html(slide):
             <!-- Assinatura Centralizada da Direção Executiva -->
             <div class="cert-signature-box central">
               <div class="cert-signature-space" title="Assinatura Digital Oficial">
-                <img src="imagens/assinatura-ceo.png" alt="Assinatura Oficial da Direção Executiva" class="cert-signature-img" />
+                <img src="imagens/assinatura-ceo.png" alt="Assinatura Oficial - Diretor Executivo - CEO" class="cert-signature-img" />
               </div>
               <div class="cert-signature-line"></div>
-              <div class="cert-signature-name">Direção Executiva</div>
-              <div class="cert-signature-role">Cyber Executive Academy • Gestão Corporativa</div>
+              <div class="cert-signature-name">Diretor Executivo - CEO</div>
+              <div class="cert-signature-role">Cyber Executive Academy • Gestão Financeira Corporativa</div>
               <div class="cert-code-tag" id="cert-auth-code">CSH-2026-X89</div>
               <div class="cert-second-copy-note" id="cert-second-copy-note" style="display: none;">
                 1ª Emissão Original em <span id="cert-orig-date">--</span> • Via registrada pelo titular acadêmico.
