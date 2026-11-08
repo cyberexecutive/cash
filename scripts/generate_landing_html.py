@@ -9,6 +9,14 @@ with open(r'C:\invest\landing.html', 'r', encoding='utf-8') as f:
 
 # Substituições de metadados e títulos
 replacements = [
+    ("Claudinei Gonçalves de Lima | Cyber Executive", "Cyber Executive"),
+    ("código criptográfico individual INV-2026 e assinatura executiva formal do CEO Claudinei Gonçalves de Lima, válido para comprovação de horas complementares e qualificação curricular.",
+     "código criptográfico individual CASH-2026 e assinatura oficial da Direção Executiva da Cyber Executive Academy, válido para comprovação de horas complementares e qualificação curricular."),
+    ("Subscrito pela Direção Executiva (Claudinei Gonçalves de Lima - CEO).",
+     "Subscrito pela Direção Executiva da Cyber Executive Academy."),
+    ("https://cyberexecutive.github.io/invest/", "https://cyberexecutive.github.io/cash/"),
+    ("https://cyberexecutive.github.io/invest", "https://cyberexecutive.github.io/cash"),
+
     # Metas e Head
     ("Como Investir e Gerenciar o Seu Dinheiro | Formação Executiva Prática 2026",
      "Gestão e Fluxo de Caixa para Empresas | Formação Executiva Prática 2026"),

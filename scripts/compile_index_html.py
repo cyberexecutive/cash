@@ -381,14 +381,14 @@ def generate_slide_html(slide):
           </div>
 
           <div class="cert-footer-row">
-            <!-- Assinatura Centralizada da Direção / CEO -->
+            <!-- Assinatura Centralizada da Direção Executiva -->
             <div class="cert-signature-box central">
               <div class="cert-signature-space" title="Assinatura Digital Oficial">
-                <img src="imagens/assinatura-ceo.png" alt="Assinatura Claudinei Gonçalves de Lima" class="cert-signature-img" />
+                <img src="imagens/assinatura-ceo.png" alt="Assinatura Oficial da Direção Executiva" class="cert-signature-img" />
               </div>
               <div class="cert-signature-line"></div>
-              <div class="cert-signature-name">Claudinei Gonçalves de Lima</div>
-              <div class="cert-signature-role">CEO - Strategic Financial Planning &amp; Corporate Management</div>
+              <div class="cert-signature-name">Direção Executiva</div>
+              <div class="cert-signature-role">Cyber Executive Academy • Gestão Corporativa</div>
               <div class="cert-code-tag" id="cert-auth-code">CSH-2026-X89</div>
               <div class="cert-second-copy-note" id="cert-second-copy-note" style="display: none;">
                 1ª Emissão Original em <span id="cert-orig-date">--</span> • Via registrada pelo titular acadêmico.
@@ -427,7 +427,7 @@ def compile_all():
   <title>Gestão e Fluxo de Caixa para Empresas | Formação Executiva Prática 2026</title>
   <meta name="description" content="Gestão e Fluxo de Caixa para Empresas: Treinamentos práticos ensinando precificação de produtos e controle financeiro de pequenos negócios. Separação PF/PJ, DRE gerencial, margem e fluxo de caixa.">
   <meta name="keywords" content="gestão financeira, fluxo de caixa, precificação de produtos, pequenas empresas, controle financeiro, capital de giro, ponto de equilíbrio, MEI, PME">
-  <meta name="author" content="Claudinei Gonçalves de Lima | Cyber Executive">
+  <meta name="author" content="Cyber Executive">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#040907">
 
@@ -665,97 +665,94 @@ def compile_all():
     </div>
   </div>
 
-  <!-- Menu Gaveta Lateral da Trilha de Módulos (Drawer) -->
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <!-- Menu Gaveta Lateral da Trilha de Módulos (Drawer com Painel Flutuante) -->
   <aside class="modules-drawer" id="modules-drawer">
-    <div class="drawer-header">
-      <div class="drawer-header-title">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        <span>Grade Executiva de Aulas</span>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Grade Executiva de Aulas
+          </h3>
+          <p>6 Módulos • 6 Desafios Práticos • Certificado Oficial</p>
+        </div>
+        <button class="drawer-close-btn" id="close-drawer-btn" title="Fechar Menu (Esc)">✕</button>
       </div>
-      <button class="drawer-close-btn" id="close-drawer-btn" title="Fechar Trilha (Esc)">✕</button>
-    </div>
 
-    <!-- Progresso do Aluno no Drawer -->
-    <div class="drawer-progress-box">
-      <div class="drawer-progress-info">
-        <span>Progresso Geral do Curso</span>
-        <strong id="drawer-progress-percent">0%</strong>
+      <div class="drawer-progress-box">
+        <div class="drawer-progress-labels">
+          <span>Progresso do Aluno</span>
+          <strong id="drawer-progress-percent">0%</strong>
+        </div>
+        <div class="drawer-progress-track">
+          <div class="drawer-progress-bar" id="drawer-progress-bar"></div>
+        </div>
       </div>
-      <div class="drawer-progress-track">
-        <div class="drawer-progress-fill" id="drawer-progress-bar"></div>
-      </div>
-    </div>
 
-    <div class="drawer-modules-list" id="drawer-modules-container">
-      <!-- Módulos e aulas injetados dinamicamente pelo JS -->
+      <div class="drawer-modules-list" id="drawer-modules-container">
+        <!-- Preenchido dinamicamente pelo JS -->
+      </div>
     </div>
   </aside>
 
   <!-- Modal de Paywall / Conclusão da Demonstração Gratuita -->
-  <div class="paywall-modal-overlay" id="paywall-modal" aria-hidden="true">
-    <div class="paywall-card">
-      <button class="paywall-close-btn" id="close-paywall-btn" title="Fechar (Esc)">✕</button>
-
-      <div class="paywall-badge-ribbon">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        CONTEÚDO EXCLUSIVO PARA ALUNOS
+  <div class="modal-overlay" id="paywall-modal" aria-hidden="true">
+    <div class="overview-content paywall-card-container">
+      <button class="close-modal-btn" id="close-paywall-btn" title="Fechar (Esc)">✕</button>
+      
+      <div class="paywall-header">
+        <div class="paywall-badge">
+          🔒 CONTEÚDO EXCLUSIVO PARA ALUNOS
+        </div>
+        <h2 class="paywall-title">Você Concluiu a <span class="highlight-cyan">Demonstração Gratuita</span>!</h2>
+        <p class="paywall-subtitle">
+          Parabéns por completar as aulas do <strong>Módulo 01 (Separação PF/PJ &amp; Pró-Labore Blindado)</strong>. Para continuar sua formação prática e desbloquear todos os <strong>6 Módulos Completos (38 Slides)</strong> e o <strong>Certificado Oficial Executivo</strong>, garanta seu acesso com desconto especial de lançamento.
+        </p>
       </div>
 
-      <h2 class="paywall-title">Você Concluiu a Demonstração Gratuita!</h2>
-      <p class="paywall-desc">
-        Parabéns por completar as aulas do <strong>Módulo 01 (Separação PF/PJ e Pró-Labore Blindado)</strong>. Para continuar sua formação prática e desbloquear todos os <strong>6 Módulos Completos (38 Slides)</strong> e o <strong>Certificado Oficial Executivo</strong>, garanta seu acesso com desconto especial de lançamento.
-      </p>
-
-      <div class="paywall-features-list">
-        <div class="paywall-feature-item">
-          <div class="paywall-feature-icon">📈</div>
-          <div class="paywall-feature-text">
+      <div class="paywall-benefits-list">
+        <div class="paywall-benefit-item">
+          <div class="paywall-benefit-icon">📈</div>
+          <div>
             <strong>6 Módulos Completos sem Restrições (38 Aulas Práticas)</strong>
-            <span>Fluxo de Caixa Diário e Projetado, Precificação Científica, Margem de Contribuição, DRE Gerencial, Gestão de Inadimplência e Governança Financeira.</span>
+            <span>Separação PF/PJ, Fluxo Diário e Projetado, Precificação Científica, DRE, Inadimplência e Governança</span>
           </div>
         </div>
-
-        <div class="paywall-feature-item">
-          <div class="paywall-feature-icon">🎯</div>
-          <div class="paywall-feature-text">
+        <div class="paywall-benefit-item">
+          <div class="paywall-benefit-icon">🎯</div>
+          <div>
             <strong>6 Desafios Práticos da Vida Real com Tomada de Decisão</strong>
-            <span>Simulações de rotina empresarial com pontuação individual e feedback estratégico imediato.</span>
+            <span>Simulações de decisões reais com pontuação individual e feedback estratégico imediato</span>
           </div>
         </div>
-
-        <div class="paywall-feature-item">
-          <div class="paywall-feature-icon">📜</div>
-          <div class="paywall-feature-text">
+        <div class="paywall-benefit-item">
+          <div class="paywall-benefit-icon">📜</div>
+          <div>
             <strong>Certificado Oficial Executivo (6 Horas)</strong>
-            <span>Personalizado com seu nome, CPF, código criptográfico individual CSH-2026 e assinatura executiva.</span>
+            <span>Personalizado com seu nome, CPF, código criptográfico individual CASH-2026 e assinatura executiva</span>
           </div>
         </div>
       </div>
 
-      <div class="paywall-checkout-box">
-        <div class="paywall-price-wrap">
-          <span class="paywall-price-label">ACESSO VITALÍCIO POR APENAS:</span>
-          <div class="paywall-price-row">
-            <span class="paywall-price-val">R$ 47<span>,00</span></span>
-            <span class="paywall-price-sub">(ou 5x de R$ 10,25)</span>
-          </div>
+      <div class="paywall-action-box">
+        <div class="paywall-price-info">
+          <span class="paywall-price-label">Acesso Vitalício por apenas:</span>
+          <div class="paywall-price-value">R$ 47<small>,00</small> <span class="paywall-price-sub">(ou 5x de R$ 10,25)</span></div>
         </div>
-
-        <div class="paywall-btns-row">
-          <a href="https://pay.kiwify.com.br/" class="paywall-cta-btn kiwify" id="btn-paywall-kiwify" target="_blank" rel="noopener">
+        <div class="paywall-dual-buttons">
+          <a href="https://pay.kiwify.com.br/SVqQtZZ" class="paywall-cta-btn paywall-btn-kiwify" id="btn-paywall-kiwify" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
             PAGAR VIA KIWIFY
           </a>
-          <a href="https://pay.hotmart.com/" class="paywall-cta-btn hotmart" id="btn-paywall-hotmart" target="_blank" rel="noopener">
+          <a href="https://pay.hotmart.com/T108385988V" class="paywall-cta-btn paywall-btn-hotmart" id="btn-paywall-hotmart" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
             PAGAR VIA HOTMART
           </a>
         </div>
       </div>
 
-      <div class="paywall-footer-actions">
-        <button class="paywall-link-btn" id="btn-paywall-enter-key">
-          Já adquiriu o treinamento? <strong>Inserir Chave de Acesso do Aluno</strong>
-        </button>
+      <div class="paywall-footer-hint">
+        <span>Já adquiriu o treinamento?</span>
+        <button type="button" class="paywall-unlock-link" id="btn-paywall-enter-key">Inserir Chave de Acesso do Aluno</button>
       </div>
     </div>
   </div>
@@ -796,7 +793,7 @@ def compile_all():
     </div>
   </div>
 
-  <!-- Modal Cadastral Obrigatório de Nome e CPF do Aluno (Slide 01 -> 02) -->
+  <!-- Modal Cadastral Obrigatório de Nome e CPF do Aluno (Apenas ao emitir Certificado no Slide 38) -->
   <div class="modal-overlay" id="student-id-modal" aria-hidden="true">
     <div class="overview-content student-id-card" style="max-width: 520px;">
       <div class="overview-header" style="border-bottom: none; padding-bottom: 0;">
@@ -808,7 +805,7 @@ def compile_all():
       </div>
 
       <div class="student-id-body">
-        <h3 class="student-id-title">Bem-vindo(a) à Capacitação Executiva!</h3>
+        <h3 class="student-id-title">Dados para o Certificado Oficial</h3>
         <p class="student-id-sub">
           Para registrar seu progresso nos 6 Desafios Práticos e <strong>emitir seu Certificado Oficial Executivo</strong> com validação de autenticidade, informe seu Nome Completo e CPF.
         </p>
@@ -816,7 +813,7 @@ def compile_all():
         <form id="form-student-id" onsubmit="event.preventDefault(); window.PresentationApp.submitStudentRegistration();">
           <div class="student-id-input-group">
             <label for="input-student-name">Nome Completo (como constará no Certificado):</label>
-            <input type="text" id="input-student-name" class="unlock-input" placeholder="Ex: Claudinei Gonçalves de Lima" required autocomplete="name" />
+            <input type="text" id="input-student-name" class="unlock-input" placeholder="Ex: Seu Nome Completo Aqui" required autocomplete="name" />
           </div>
 
           <div class="student-id-input-group" style="margin-top: 14px;">
@@ -826,8 +823,8 @@ def compile_all():
 
           <div class="student-id-actions" style="margin-top: 20px;">
             <button type="submit" class="action-pill primary" style="width: 100%; justify-content: center; padding: 12px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Confirmar e Iniciar Treinamento
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Salvar Dados e Emitir Certificado
             </button>
           </div>
         </form>
@@ -843,7 +840,7 @@ def compile_all():
   <div class="course-toast" id="course-toast" role="alert" aria-live="polite"></div>
 
   <!-- Script da Engine Interativa -->
-  <script src="js/presentation.js?v=2.0"></script>
+  <script src="js/presentation.js?v=2.1"></script>
 </body>
 </html>'''
 

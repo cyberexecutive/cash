@@ -29,3 +29,4 @@ out_arr = np.stack([new_r, new_g, new_b], axis=2).astype(np.uint8)
 out_im = Image.fromarray(out_arr)
 out_im.save(out_p, quality=95)
 print(f"Gerado {out_p} com sucesso!")
+

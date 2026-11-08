@@ -166,11 +166,7 @@
    * Inicia o treinamento no Slide 1: exige cadastro de Nome e CPF se ainda não realizado
    */
   function startCourse() {
-    if (!state.isStudentRegistered && !state.isGestor) {
-      openStudentIdModal();
-    } else {
-      goToSlide(2);
-    }
+    goToSlide(2);
   }
 
   /**
@@ -355,6 +351,11 @@
     }
 
     bindEvents();
+
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('drawer') === '1') {
+      setTimeout(() => toggleModulesDrawer(true), 150);
+    }
   }
 
   /**
@@ -371,7 +372,7 @@
       }
 
       const savedName = localStorage.getItem('cash_student_name');
-      if (savedName && !savedName.toLowerCase().includes('claudinei')) {
+      if (savedName) {
         state.studentName = savedName;
       }
       const savedCpf = localStorage.getItem('cash_student_cpf');
@@ -762,8 +763,9 @@
     const actionButtons = isCorrect
       ? `
         <button class="action-pill primary" id="btn-zoom-next-slide" style="padding: 13px 30px; font-weight: 800; font-size: 1.05rem; border-radius: 999px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          Próxima Aula →
+          ${quizId === 1 && !state.isUnlocked 
+            ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Concluir Demonstração & Desbloquear Curso →'
+            : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg> Próxima Aula →'}
         </button>
         <button class="action-pill" id="btn-zoom-retry-quiz" style="padding: 12px 22px; font-size: 0.95rem; border-radius: 999px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
@@ -869,6 +871,19 @@
       // Adiciona listener para clicar no box e ampliar em tela cheia
       if (!feedbackBox._hasZoomListener) {
         feedbackBox._hasZoomListener = true;
+        // Se for o Quiz 01 da Demonstração e o usuário não for aluno matriculado
+        const currentQId = parseInt(container.getAttribute('data-quiz-id'), 10);
+        if (currentQId === 1 && !state.isUnlocked) {
+          const nextBtn = feedbackBox.querySelector('.action-pill.primary');
+          if (nextBtn) {
+            nextBtn.innerHTML = '🔒 Concluir Demonstração & Desbloquear Curso →';
+            nextBtn.onclick = (ev) => {
+              ev.stopPropagation();
+              openPaywallModal(8);
+            };
+          }
+        }
+
         feedbackBox.addEventListener('click', (e) => {
           if (e.target.closest('button')) return;
           const qId = parseInt(container.getAttribute('data-quiz-id'), 10);
@@ -1041,7 +1056,14 @@
       return;
     }
 
-    // 2. Validação estrita de conclusão de todos os desafios práticos (exceto Gestor)
+    // 2. Se o aluno ainda não preencheu Nome e CPF para o certificado
+    if (!state.isStudentRegistered && !state.isGestor) {
+      showToast('⚠️ Preencha seu Nome Completo e CPF para emissão do Certificado Oficial.', 4000);
+      openStudentIdModal();
+      return;
+    }
+
+    // 3. Validação estrita de conclusão de todos os desafios práticos (exceto Gestor)
     if (!state.isGestor) {
       const pendingMod = modulesMeta.find(m => m.quizSlide && !(state.quizzes[m.id] && state.quizzes[m.id].correct));
       if (pendingMod) {
@@ -1373,12 +1395,8 @@
     if (slideNum < 1) slideNum = 1;
     if (slideNum > state.totalSlides) slideNum = state.totalSlides;
 
-    // 1. Trava de Cadastro Inicial do Aluno (Nome Completo e CPF obrigatórios para iniciar)
-    if (slideNum > 1 && !state.isStudentRegistered && !state.isGestor) {
-      openStudentIdModal();
-      showToast('⚠️ Preencha seu Nome Completo e CPF para iniciar o treinamento.', 4000);
-      return;
-    }
+    // 1. Demonstração Gratuita: Slides 1 a 7 são 100% livres sem cadastro.
+    // O modal de identificação cadastral só será solicitado ao emitir o certificado oficial (Slide 38).
 
     // 2. Trava de Demonstração / Paywall nos Módulos 03 a 11
     if (!state.isUnlocked && slideNum > state.maxDemoSlide) {
@@ -1427,6 +1445,13 @@
 
     if (state.isCardZoomOpen) {
       closeCardZoom();
+    }
+
+    // Se chegou ao Slide 38 (Certificado Oficial) como aluno matriculado mas ainda não preencheu o cadastro
+    if (slideNum === 38 && state.isUnlocked && !state.isStudentRegistered && !state.isGestor) {
+      setTimeout(() => {
+        openStudentIdModal();
+      }, 400);
     }
 
     state.currentSlide = slideNum;
