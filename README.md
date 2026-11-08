@@ -7,7 +7,8 @@ Plataforma web de capacitação prática e executiva em **Gestão e Fluxo de Cai
 - **Landing Page de Vendas:** [https://cyberexecutive.github.io/cash/landing.html](https://cyberexecutive.github.io/cash/landing.html)  
 
 💳 **Links Oficiais de Pagamento (R$ 47,00):**  
-- *Links de checkout Kiwify e Hotmart serão atualizados assim que fornecidos pelo gestor.*
+- **Kiwify Checkout:** [https://pay.kiwify.com.br/rPEyObt](https://pay.kiwify.com.br/rPEyObt) (Sales Page: [https://kiwify.app/BrBFEqd](https://kiwify.app/BrBFEqd))  
+- **Hotmart Checkout:** [https://pay.hotmart.com/K108392255X](https://pay.hotmart.com/K108392255X) (Vendas: [https://go.hotmart.com/K108392255X](https://go.hotmart.com/K108392255X) | Produto: [https://go.hotmart.com/K108392255X?dp=1](https://go.hotmart.com/K108392255X?dp=1))
 
 ---
 

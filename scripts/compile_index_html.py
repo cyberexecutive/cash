@@ -741,10 +741,10 @@ def compile_all():
           <div class="paywall-price-value">R$ 47<small>,00</small> <span class="paywall-price-sub">(ou 5x de R$ 10,25)</span></div>
         </div>
         <div class="paywall-dual-buttons">
-          <a href="https://pay.kiwify.com.br/SVqQtZZ" class="paywall-cta-btn paywall-btn-kiwify" id="btn-paywall-kiwify" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
+          <a href="https://pay.kiwify.com.br/rPEyObt" class="paywall-cta-btn paywall-btn-kiwify" id="btn-paywall-kiwify" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
             PAGAR VIA KIWIFY
           </a>
-          <a href="https://pay.hotmart.com/T108385988V" class="paywall-cta-btn paywall-btn-hotmart" id="btn-paywall-hotmart" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
+          <a href="https://pay.hotmart.com/K108392255X" class="paywall-cta-btn paywall-btn-hotmart" id="btn-paywall-hotmart" target="_blank" rel="noopener" style="border-radius: 9999px !important;">
             PAGAR VIA HOTMART
           </a>
         </div>
