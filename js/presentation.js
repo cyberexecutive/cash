@@ -325,6 +325,13 @@
     state.totalSlides = dom.slides.length || 38;
     if (dom.totalNum) dom.totalNum.textContent = String(state.totalSlides).padStart(2, '0');
 
+    // Restaura tema salvo (Liquid Glass Fosco Claro ou Escuro)
+    try {
+      if (localStorage.getItem('cybersec_theme') === 'light') {
+        document.body.classList.add('light-mode');
+      }
+    } catch (e) {}
+
     // Carrega dados salvos em localStorage
     loadSavedProgress();
 
@@ -685,7 +692,7 @@
         </div>
       </div>
       <div class="zoomed-body">
-        <p style="font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.55; color: #f8fafc; font-weight: 500;">
+        <p style="font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.55; font-weight: 500;">
           ${text}
         </p>
       </div>
@@ -792,13 +799,13 @@
         </div>
         <div class="zoomed-meta">
           ${statusBadge}
-          <h2 class="zoomed-title" style="font-size: clamp(1.4rem, 2.2vw, 1.9rem); margin-top: 4px; color: #ffffff;">${titleH2}</h2>
+          <h2 class="zoomed-title" style="font-size: clamp(1.4rem, 2.2vw, 1.9rem); margin-top: 4px; ">${titleH2}</h2>
           <div style="font-size: 0.85rem; color: #94a3b8; font-weight: 600;">${catText} • ${titleText}</div>
         </div>
       </div>
 
       <div class="zoomed-body" style="margin: clamp(14px, 2.2vh, 22px) 0; padding: clamp(18px, 2.5vh, 26px); background: rgba(15, 23, 42, 0.75); border: 1.5px solid ${isCorrect ? 'rgba(16, 185, 129, 0.4)' : 'rgba(239, 68, 68, 0.4)'}; border-radius: 16px; box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);">
-        <div style="font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.65; color: #f8fafc; font-weight: 400;">
+        <div style="font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.65; font-weight: 400;">
           ${feedbackText}
         </div>
       </div>
@@ -1555,7 +1562,10 @@
   }
 
   function toggleTheme() {
-    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.toggle('light-mode');
+    try {
+      localStorage.setItem('cybersec_theme', isLight ? 'light' : 'dark');
+    } catch (e) {}
   }
 
   /**
