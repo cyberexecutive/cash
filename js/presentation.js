@@ -1454,12 +1454,7 @@
       closeCardZoom();
     }
 
-    // Se chegou ao Slide 38 (Certificado Oficial) como aluno matriculado mas ainda não preencheu o cadastro
-    if (slideNum === 38 && state.isUnlocked && !state.isStudentRegistered && !state.isGestor) {
-      setTimeout(() => {
-        openStudentIdModal();
-      }, 400);
-    }
+    // A identificação oficial é solicitada ao clicar em 'Imprimir / Salvar em PDF' ou no crachá do aluno
 
     state.currentSlide = slideNum;
 
